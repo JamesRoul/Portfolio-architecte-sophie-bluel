@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
           const data = await response.json(); // convertimos la respuesta en JSON
           // Si la API devuelve un error "user not found", alertamos al usuario
           if (data.message === 'user not found') {
-            alert('No se encontró ninguna cuenta con este correo electrónico. Verifica tus credenciales e inténtalo de nuevo.');
+            alert('Information incorrecte.');
           } else {
-            throw new Error('Las informaciones de usuario / contraseña son incorrectas. Vuelve a intentarlo.');
+            throw new Error('Information incorrecte');
           }
         } else {
           const data = await response.json();
@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
           if (data.token) {
             localStorage.setItem('authToken', data.token);
-            console.log('Token guardado:', localStorage.getItem('authToken'));  // Nueva línea para depuración
+            console.log('Token gardé:', localStorage.getItem('authToken'));  // Nueva línea para depuración
             window.location.href = 'http://localhost:5678/index.html';
           }
         }
       } catch (error) {
         console.error('Error durante la autenticación:', error);
-        alert('Ha ocurrido un error. Por favor, inténtalo de nuevo más tarde.');
+        alert('Une erreur s est produite, reessayer plus tard.');
       }
     });
   }
