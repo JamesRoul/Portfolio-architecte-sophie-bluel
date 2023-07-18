@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async (event) => {
           // Agregar evento de clic al botón "Modifier" para abrir la modal
            
           if (editButton && modal) {
-            modal.style.display = 'none';  // Asegúrate de que la modal esté oculta inicialmente
+            modal.style.display = 'none';  // chack que la modal esté oculta inicialmente
             editButton.addEventListener('click', () => {
               const allJobs = JSON.parse(localStorage.getItem('allJobs'));
               updateModal(allJobs); // Llamada a la función updateModal para cargar las imágenes en la modal cada vez que se hace clic en el botón de editar
@@ -382,7 +382,7 @@ document.addEventListener('DOMContentLoaded', async (event) => {
         if (response.ok) {
           const responseData = await response.json();
           console.error('Server response:', responseData);
-          alert('Foto añadida con éxito!');
+          alert('La photo a bien été ajoutée!');
   
           // Aquí puedes agregar la nueva foto a la galería en el cliente
           const newPhoto = {
@@ -477,7 +477,7 @@ document.addEventListener('DOMContentLoaded', async (event) => {
     submitButton.addEventListener('click', async (event) => {
       event.preventDefault();
   
-      const confirmation = confirm('¿Estás seguro de que quieres eliminar todos los proyectos?');
+      const confirmation = confirm('Souhaitez-vous vraiment éliminer la gallerie?');
       if (confirmation) {
         try {
           const authToken = localStorage.getItem('authToken');
